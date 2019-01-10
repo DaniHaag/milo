@@ -24,13 +24,13 @@
                                 <configuration>
                                     <archive>
                                         <manifest>
-                                            <mainClass>org.eclipse.milo.examples.server.SecureServerStandalone</mainClass>
+                                            <mainClass>org.eclipse.milo.examples.server.ExampleServer</mainClass>
                                         </manifest>
                                     </archive>
                                     <descriptorRefs>
                                         <descriptorRef>jar-with-dependencies</descriptorRef>
                                     </descriptorRefs>
-                                    <finalName>milo-opcua-server</finalName>
+                                    <!--<finalName>milo-opcua-server</finalName>-->
                                 </configuration>
                                 <phase>package</phase>
                                 <goals>
@@ -112,6 +112,21 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>org.eclipse.milo.examples.server.ExampleServer</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>
